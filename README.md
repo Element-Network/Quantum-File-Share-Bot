@@ -22,6 +22,18 @@
 
 ---
 
+## 🧪 **Experience the Flow: Live Demonstration**
+
+Interact with a fully deployed instance to understand the elegant user experience and powerful backend logic.
+
+* 🔗 **Engage Now:** [`@Daisuke_Kambebot`](https://t.me/Daisuke_Kambebot)
+* *Validate the force-subscription consent process, test short-lived link generation, and review premium status checks.*
+* 
+
+---
+
+---
+
 ## 🚀 **New Features (v2.0 Update)**
 
 | Feature | Description |

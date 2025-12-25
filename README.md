@@ -100,37 +100,152 @@ public_batch - ᴄʀᴇᴀᴛᴇꜱ ᴀ ʙᴀᴛᴄʜ ʟɪɴᴋ ꜰᴏʀ ᴜᴘ 
 publicmode_help - ᴅɪꜱᴘʟᴀʏꜱ ᴛʜᴇ ɢᴜɪᴅᴇ ᴏɴ ʜᴏᴡ ᴛᴏ ᴜꜱᴇ ᴘᴜʙʟɪᴄ ᴍᴏᴅᴇ.
 ```
 
-## 💻 **Configuration (`setup.json`)**
+## 💻 **Configuration and Setup**
 
-The system relies on a modular setup for robust deployment. Each object in the array defines a **fully isolated bot instance**, allowing you to run multiple bots from one codebase.
+The system relies on a modular setup for robust deployment:
+
+### `setup.json` (Multi-Bot Configuration Array)
+Each object defines a **fully isolated bot instance**.
 
 ```json
+/* Example entry defining a single bot's universe */
 [
+   
    {
-        "session": "ses",
+        "session": "ses",  // unique session name for this bot
         "token": "YOUR_BOT_TOKEN",
         "api_id": "YOUR_API_ID",
         "api_hash": "YOUR_API_HASH",
         "workers": 8,
         "db_name": "Cluster0",
-        "fsubs": [[-100000008034, false, 0]],
-        "db": -10022000033431,
-        "auto_del": 0,
+        "fsubs": [[-100000008034, false, 0], [-1003201992157, true, 5]], // [channel_id, request_enabled, link_expiry_in_minutes]
+        "db": -10022000033431,  // logs or updates group
+        "auto_del": 0,  // auto delete message time in seconds (0 = disabled)
         "messages": {
-            "START": "Hi {mention}, Welcome to {username}",
-            "FSUB": "Join Force-Sub Channels...",
-            "ABOUT": "Developer: [𓆩ᗩӄ𓆪](https://t.me/Shadow_Blank)",
-            "REPLY": "You Are Not My Master",
-            "START_PHOTO": "[https://i.ibb.co/TD8Y4rCq/thumb.jpg](https://i.ibb.co/TD8Y4rCq/thumb.jpg)",
-            "FSUB_PHOTO": "[https://i.ibb.co/JRYYZkFy/b1.jpg](https://i.ibb.co/JRYYZkFy/b1.jpg)",
-            "Short": "Your link is ready...",
-            "SHORT_PHOTO": "[https://i.ibb.co/JRYYZkFy/b1.jpg](https://i.ibb.co/JRYYZkFy/b1.jpg)"
+            "START": "<blockquote expandable><b>┏━━━━━━━━━━━━━━━━━━━━━┓\n◉ Hi {mention}, I am advance file store bot. \n◉ ID 🪪 : {id} \n◉ Username : {username} \n◉ Powered By :  @Element_Network \n┗━━━━━━━━━━━━━━━━━━━━━┛</b></blockquote>",
+            "FSUB": "<blockquote expandable><b>Join Force-Sub Channels To Get All The Episodes Note = Force-Sub link 🖇️ will reset in every 5 minutes so join the chnl within time.</b></blockquote>",
+            "ABOUT": "<blockquote expandable><b>┏━━━━━━━━━━━━━━━━━━━━━┓\n╔◉ 🧑🏻‍💻Dᴇᴠᴇʟᴏᴩᴇʀ : [𓆩ᗩӄ𓆪](https://t.me/Shadow_Blank) \n╠◉ 📚Lɪʙʀᴀʀy : [Pʏʀᴏɢʀᴀᴍ](https://github.com/pyrogram) \n╠◉ 📝Lᴀɴɢᴜᴀɢᴇ : [Pʏᴛʜᴏɴ 3](https://www.python.org/) \n╠◉ ✒️Aᴅᴍɪɴ Nᴏᴛᴇ : [Sᴛᴀᴛᴇᴍᴇɴᴛ](https://telegra.ph/STATEMENT-07-31-9) \n╠◉ 👥Sᴜᴘᴘᴏʀᴛ : [Eʟᴇᴍᴇɴᴛꜱ Aᴅᴍɪɴ](https://t.me/Element_Admin_Robot) \n╚◉ 📢 Uᴘᴅᴀᴛᴇ : [Eʟᴇᴍᴇɴᴛ Nᴇᴛᴡᴏʀᴋ ](https://t.me/Element_Network) \n┗━━━━━━━━━━━━━━━━━━━━━┛</b></blockquote>",
+            "REPLY": "<blockquote expandable><b>You Are Not My Master</b></blockquote>",
+            "START_PHOTO": "https://i.ibb.co/TD8Y4rCq/thumb.jpg",  // image URL or Telegram file ID
+            "FSUB_PHOTO": "https://i.ibb.co/JRYYZkFy/b1.jpg",  // image URL or Telegram file ID
+            "Short": "<blockquote><b>📊 ʜᴇʏ {mention},\n\n‼️ ⌯ ʏᴏᴜʀ ʟɪɴᴋ ɪꜱ ʀᴇᴀᴅʏ, ᴋɪɴᴅʟʏ ᴄʟɪᴄᴋ ᴏɴ ᴏᴘᴇɴ ʟɪɴᴋ ʙᴜᴛᴛᴏɴ..‼️ \n\n𝗡𝗼𝘁𝗲: ɪꜰ ᴛʜᴇ ᴄᴏᴜɴᴛᴅᴏᴡɴ ɪꜱ ɴᴏᴛ ᴡᴏʀᴋɪɴɢ ᴏᴘᴇɴ ᴛʜᴇ ʟɪɴᴋ ʙʏ ɢᴏᴏɢʟᴇ ᴄʜʀᴏᴍᴇ..</b></blockquote>",
+            "SHORT_PHOTO": "https://i.ibb.co/JRYYZkFy/b1.jpg". // image URL or Telegram file ID
         },
-        "admins": [1234567890],
+        "admins": [0987654321, 12345678909],  // To add multiple admins use [{id 1}, {id 2},{id 3}, so on]
         "disable_btn": true,
-        "protect": false,
-        "shortner_link": ["[https://shortner.com/api?api=xyz](https://shortner.com/api?api=xyz){}"],
+        "protect": false,  // To toggle protect mode ON or OFF 📴 
+        "shortner_link": ["https://{website 1}/api?api=67cdced1b10hrudd7du{}", "https://{website 2}/api?api=67cdced1b10hrudd7du{}"],  // By this you can multiple shortner
+        "token_system": true
+  },
+  {
+        "session": "ses2",  // unique session name for this bot
+        "token": "YOUR_BOT_TOKEN",  
+        "api_id": "YOUR_API_ID",
+        "api_hash": "YOUR_API_HASH",
+        "workers": 8,
+        "db_name": "Filestoreage01_bot",
+        "fsubs": [[-100000008034, false, 0], [-1003201992157, true, 5]], // [channel_id, request_enabled, link_expiry_in_minutes]
+        "db": -10022000033431,  // logs or updates group
+        "auto_del": 0,  // auto delete message time in seconds (0 = disabled)
+        "messages": {
+            "START": "<blockquote expandable><b>┏━━━━━━━━━━━━━━━━━━━━━┓\n◉ Hi {mention}, I am advance file store bot. \n◉ ID 🪪 : {id} \n◉ Username : {username} \n◉ Powered By :  @Element_Network \n┗━━━━━━━━━━━━━━━━━━━━━┛</b></blockquote>",
+            "FSUB": "<blockquote expandable><b>Join Force-Sub Channels To Get All The Episodes. \n\nNote = Force-Sub link 🖇️ will reset in every 5 minutes so join the chnl within time.</b></blockquote>",
+            "ABOUT": "<blockquote expandable><b>┏━━━━━━━━━━━━━━━━━━━━━┓\n╔◉ 🧑🏻‍💻Dᴇᴠᴇʟᴏᴩᴇʀ : [𓆩ᗩӄ𓆪](https://t.me/Shadow_Blank) \n╠◉ 📚Lɪʙʀᴀʀy : [Pʏʀᴏɢʀᴀᴍ](https://github.com/pyrogram) \n╠◉ 📝Lᴀɴɢᴜᴀɢᴇ : [Pʏᴛʜᴏɴ 3](https://www.python.org/) \n╠◉ ✒️Aᴅᴍɪɴ Nᴏᴛᴇ : [Sᴛᴀᴛᴇᴍᴇɴᴛ](https://telegra.ph/STATEMENT-07-31-9) \n╠◉ 👥Sᴜᴘᴘᴏʀᴛ : [Eʟᴇᴍᴇɴᴛꜱ Aᴅᴍɪɴ](https://t.me/Element_Admin_Robot) \n╚◉ 📢 Uᴘᴅᴀᴛᴇ : [Eʟᴇᴍᴇɴᴛ Nᴇᴛᴡᴏʀᴋ ](https://t.me/Element_Network) \n┗━━━━━━━━━━━━━━━━━━━━━┛</b></blockquote>",
+            "REPLY": "<blockquote expandable><b>You Are Not My Master</b></blockquote>",
+            "START_PHOTO": "https://i.ibb.co/mF88FGhn/b1.jpg",  // image URL or Telegram file ID
+            "FSUB_PHOTO": "https://i.ibb.co/vxzpq1KJ/b2.jpg",  // image URL or Telegram file ID
+            "Short": "<blockquote><b>📊 ʜᴇʏ {mention},\n\n‼️ ⌯ ʏᴏᴜʀ ʟɪɴᴋ ɪꜱ ʀᴇᴀᴅʏ, ᴋɪɴᴅʟʏ ᴄʟɪᴄᴋ ᴏɴ ᴏᴘᴇɴ ʟɪɴᴋ ʙᴜᴛᴛᴏɴ..‼️ \n\n𝗡𝗼𝘁𝗲: ɪꜰ ᴛʜᴇ ᴄᴏᴜɴᴛᴅᴏᴡɴ ɪꜱ ɴᴏᴛ ᴡᴏʀᴋɪɴɢ ᴏᴘᴇɴ ᴛʜᴇ ʟɪɴᴋ ʙʏ ɢᴏᴏɢʟᴇ ᴄʜʀᴏᴍᴇ..</b></blockquote>",
+            "SHORT_PHOTO": "https://i.ibb.co/vxzpq1KJ/b2.jpg". // image URL or Telegram file ID
+        },
+        "admins": [0987654321, 12345678909],  // To add multiple admins use [{id 1}, {id 2},{id 3}, so on]
+        "disable_btn": true,
+        "protect": false,  // To toggle protect mode ON or OFF 📴 
+        "shortner_link": ["https://{website 1}/api?api=67cdced1b10hrudd7du{}", "https://{website 2}/api?api=67cdced1b10hrudd7du{}"],  // By this you can multiple shortner
         "token_system": true
   }
+   
 ]
+```
 
+---
+
+### 🌟 **Dynamic Placeholders**
+
+Customize messages like a pro. These variables are automatically replaced with real-time user/bot data:
+
+| Placeholder | Scope | Purpose |
+| :--- | :--- | :--- |
+| `{mention}` | `START`, `ABOUT` | **Clickable User Mention** (highest personalization). |
+| `{first}`, `{last}` | `START`, `ABOUT` | User's first and last name. |
+| `{username}` | `START`, `ABOUT` | User's `@username`. |
+| `{id}` | `START`, `ABOUT` | Telegram user ID. |
+| `{owner_id}`, `{bot_username}` | `ABOUT` | Key operational identifiers. |
+
+> ⚠️ **Note:** Force Subscribe messages **do not support** placeholders.
+
+### 🚀 **Quick Start Guide**
+
+Follow these three steps to deploy the bot on your server:
+
+1.  **Clone & Setup:** Clone the repository and install dependencies.
+    ```bash
+    git clone 
+    cd FileStoreBot
+    pip install -r requirements.txt
+    ```
+2.  **Configure:** Edit `config.py` (for global settings like `OWNER_ID`) and define your bot instances in the `setup.json` array (Tokens, DB URI, Channels, Admins).
+3.  **Launch:** Run the main Python file to start the bot(s).
+    ```bash
+    python3 main.py
+    ```
+
+---
+
+# License
+
+# 🛑 Element-Network Proprietary License (ENPL)
+
+This document is the official license for the source code contained within this repository (the "Software"). **Please read this carefully.**
+
+---
+
+## 📜 1. The Basics: What You CAN Do (Grant of License)
+
+The owner grants you a limited, personal license to the Software:
+
+* **Allowed Use:** You may use and modify the Software.
+* **Scope:** This is strictly for your **personal use** or **internal business use only**.
+* **Transferability:** This license is **non-exclusive** and **non-transferable**. You cannot give or sell the license to anyone else.
+
+---
+
+## 🚫 2. Strict Prohibitions: What You MUST NOT Do
+
+The following actions are **STRICTLY PROHIBITED** and will result in the immediate termination of your license.
+
+| Prohibited Action | Description |
+| :--- | :--- |
+| **❌ Redistribution** | You may **not** publish, upload, or make the Software, in whole or in part, available to any third party. |
+| **❌ Resale** | You may **not** sell the Software, whether by itself or integrated into another product, without a separate, written Resale Agreement from the owner. |
+| **❌ Unauthorized Sharing** | You may **not** share the source code or any works derived from it with anyone outside of your immediate licensed environment. |
+| **❌ Reverse Engineering** | You may **not** decompile, reverse engineer, or attempt to extract the source code from any compiled versions of the Software. |
+
+---
+
+## 📞 3. Questions, Support, and Commercial Use
+
+If you need to discuss purchasing, custom services, support, or require explicit permission to perform any restricted action above, please contact the owner directly:
+
+* **Telegram:** [`៚𓄂ᗩӄ‌᭄`](https://t.me/Shadow_Blank)
+
+---
+
+## 🛡️ 4. Ownership and Intellectual Property
+
+You acknowledge that all rights, title, and interest in the Software, including all copyrights and intellectual property, belong **exclusively to the original owner.** This document grants you only the right to use the Software as specified above.
+
+## 💀 5. Termination
+
+* **Effective Date:** This license is active from the moment you acquire the Software.
+* **Immediate Termination:** If you fail to comply with any term or restriction in this license, the license is **immediately terminated** without notice.
+* **Upon Termination:** You must stop all use of the Software immediately and destroy all copies of the Software and its source code.

@@ -28,7 +28,6 @@ Interact with a fully deployed instance to understand the elegant user experienc
 
 * 🔗 **Engage Now:** [`@Daisuke_Kambebot`](https://t.me/Daisuke_Kambebot)
 * *Validate the force-subscription consent process, test short-lived link generation, and review premium status checks.*
-* 
 
 ---
 

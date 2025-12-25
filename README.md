@@ -38,7 +38,7 @@
 
 Interact with a fully deployed instance to understand the elegant user experience and powerful backend logic.
 
-* 🔗 **Engage Now:** [`@Skirk_File_Bot`](https://t.me/Skirk_File_Bot)
+* 🔗 **Engage Now:** [`@Daisuke_Kambebot`](https://t.me/Daisuke_Kambebot)
 * *Validate the force-subscription consent process, test short-lived link generation, and review premium status checks.*
 
 ---

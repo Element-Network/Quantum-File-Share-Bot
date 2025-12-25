@@ -56,7 +56,7 @@ Interact with a fully deployed instance to understand the elegant user experienc
 ### 🌍 **Public Mode (New!)**
 * **Toggleable Access:** Admins can turn public uploading on/off.
 * **Smart Footers:** When a public user uploads a file, their info is stamped on the file caption in the DB. When retrieved by others, the footer is **cleanly removed**.
-* **Batch Capabilities:** Users can batch up to 50 files from their own channels if the bot is an admin there.
+* **Batch Capabilities:** Users can batch up to 20 files from their own channels if the bot is an admin there.
 
 ### 📈 **Data & Communication**
 * **Real-time Analytics:** Track metrics via `/stats` (Database) and `/usage` (Server Resources).
@@ -77,7 +77,7 @@ start - ɪɴɪᴛɪᴀᴛᴇꜱ ᴏʀ ʀᴇꜱᴛᴀʀᴛꜱ ᴛʜᴇ ʙᴏᴛ �
 usage - ᴅɪꜱᴘʟᴀʏꜱ ᴄᴜʀʀᴇɴᴛ ʙᴏᴛ ᴜꜱᴀɢᴇ ꜱᴛᴀᴛɪꜱᴛɪᴄꜱ.
 myplan - ᴄʜᴇᴄᴋꜱ ᴛʜᴇ ꜱᴛᴀᴛᴜꜱ ᴏꜰ ᴛʜᴇ ᴜꜱᴇʀ'ꜱ ᴘʀᴇᴍɪᴜᴍ ᴘʟᴀɴ.
 list_allcmd - ᴅɪꜱᴘʟᴀʏꜱ ᴀ ʟɪꜱᴛ ᴏꜰ ᴀʟʟ ᴀᴠᴀɪʟᴀʙʟᴇ ᴄᴏᴍᴍᴀɴᴅꜱ.
-public_batch - ᴄʀᴇᴀᴛᴇꜱ ᴀ ʙᴀᴛᴄʜ ʟɪɴᴋ ꜰᴏʀ ᴜᴘ ᴛᴏ 50 ꜰɪʟᴇꜱ (ᴘᴜʙʟɪᴄ ᴍᴏᴅᴇ).
+public_batch - ᴄʀᴇᴀᴛᴇꜱ ᴀ ʙᴀᴛᴄʜ ʟɪɴᴋ ꜰᴏʀ ᴜᴘ ᴛᴏ 20 ꜰɪʟᴇꜱ (ᴘᴜʙʟɪᴄ ᴍᴏᴅᴇ).
 publicmode_help - ᴅɪꜱᴘʟᴀʏꜱ ᴛʜᴇ ɢᴜɪᴅᴇ ᴏɴ ʜᴏᴡ ᴛᴏ ᴜꜱᴇ ᴘᴜʙʟɪᴄ ᴍᴏᴅᴇ.
 users - [ᴀᴅᴍɪɴ] ᴅɪꜱᴘʟᴀʏꜱ ᴛʜᴇ ᴛᴏᴛᴀʟ ɴᴜᴍʙᴇʀ ᴏꜰ ʀᴇɢɪꜱᴛᴇʀᴇᴅ ᴜꜱᴇʀꜱ.
 ban - [ᴀᴅᴍɪɴ] ʀᴇꜱᴛʀɪᴄᴛꜱ ᴀ ꜱᴘᴇᴄɪꜰɪᴇᴅ ᴜꜱᴇʀ ꜰʀᴏᴍ ᴜꜱɪɴɢ ᴛʜᴇ ʙᴏᴛ.
@@ -108,7 +108,7 @@ start - ɪɴɪᴛɪᴀᴛᴇꜱ ᴏʀ ʀᴇꜱᴛᴀʀᴛꜱ ᴛʜᴇ ʙᴏᴛ �
 usage - ᴅɪꜱᴘʟᴀʏꜱ ᴄᴜʀʀᴇɴᴛ ʙᴏᴛ ᴜꜱᴀɢᴇ ꜱᴛᴀᴛɪꜱᴛɪᴄꜱ.
 myplan - ᴄʜᴇᴄᴋꜱ ᴛʜᴇ ꜱᴛᴀᴛᴜꜱ ᴏꜰ ᴛʜᴇ ᴜꜱᴇʀ'ꜱ ᴘʀᴇᴍɪᴜᴍ ᴘʟᴀɴ.
 list_allcmd - ᴅɪꜱᴘʟᴀʏꜱ ᴀ ʟɪꜱᴛ ᴏꜰ ᴀʟʟ ᴀᴠᴀɪʟᴀʙʟᴇ ᴄᴏᴍᴍᴀɴᴅꜱ.
-public_batch - ᴄʀᴇᴀᴛᴇꜱ ᴀ ʙᴀᴛᴄʜ ʟɪɴᴋ ꜰᴏʀ ᴜᴘ ᴛᴏ 50 ꜰɪʟᴇꜱ (ᴘᴜʙʟɪᴄ ᴍᴏᴅᴇ).
+public_batch - ᴄʀᴇᴀᴛᴇꜱ ᴀ ʙᴀᴛᴄʜ ʟɪɴᴋ ꜰᴏʀ ᴜᴘ ᴛᴏ 20 ꜰɪʟᴇꜱ (ᴘᴜʙʟɪᴄ ᴍᴏᴅᴇ).
 publicmode_help - ᴅɪꜱᴘʟᴀʏꜱ ᴛʜᴇ ɢᴜɪᴅᴇ ᴏɴ ʜᴏᴡ ᴛᴏ ᴜꜱᴇ ᴘᴜʙʟɪᴄ ᴍᴏᴅᴇ.
 ```
 
